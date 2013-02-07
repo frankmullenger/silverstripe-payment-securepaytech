@@ -1,37 +1,29 @@
-# PayPal Payment
+# Secure Pay Tech Payment
 
 ## Maintainer Contacts
 
-*  Ryan Dao
 *  Frank Mullenger
-*  Jeremy Shipman
 
 ## Requirements
 
-* SilverStripe 3.0
-* SilverStripe Payment
+* SilverStripe 3.*
+* SilverStripe Payment 1.*
 
 ## Documentation
 
 ### Usage Overview
 
-This module provides PayPal payment support for the SilverStripe Payment module. 
+This module provides Secure Pay Tech payment support for the SilverStripe Payment module. This integration uses Secure Pay Tech's [Hosted Payment Page](http://www.securepaytech.com/developers/documentation/) to process the payment which basically requires a form to be submitted directly to the Secure Pay Tech servers. 
+
+This extra form that submits directly to their servers is displayed on the SecurePayTechConfirmation.ss template, so you can customise the content on that page with that file.
 
 ### Installation guide
   Add to mysite/_config:
   
-  	PayPalGateway_Express: 
+  	SecurePayTechGateway: 
 		  live:
-		    authentication:
-		      username: ''
-		      password: ''
-		      signature: ''
+		    merchant_id: ''
 		  dev:
-		    authentication:
-		      username: ''
-		      password: ''
-		      signature: ''
+		    merchant_id: 'TESTDIGISPL1'
 
-To get PayPal Sandbox test accounts, follow the [PayPal documentation](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Sandbox_UserGuide.pdf).
- 
-**Note:** If you have "Bad request" problems with PayPal, try to empty the browser cache and cookies. If you get error 3005 try testing on a different machine/IP address.
+The dev account is a general test account which should work straight off the bat.
