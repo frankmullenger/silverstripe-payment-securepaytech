@@ -1,0 +1,19 @@
+name: SecurePayTech
+---
+
+PaymentFactory:
+  SecurePayTech:
+    title: 'Secure Pay Tech'
+    processor: 'SecurePayTechProcessor'
+    gateway_classes:
+      live: 'SecurePayTechGateway'
+      dev: 'SecurePayTechGateway'
+    model: 'Payment'
+
+SecurePayTechGateway:
+  live:
+    url:
+      'https://merchant.securepaytech.com/paymentpage/index.php'
+  dev:
+    url:
+      'https://merchant.securepaytech.com/paymentpage/index.php'
